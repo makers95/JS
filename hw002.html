@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        @import "CSS/main.css";
+    </style>
+    <script>
+
+
+
+        function checkName() {
+            let theNameObj = document.getElementById("idname")
+            let theName = theNameObj.value;
+            console.log(`theNameObj=${theNameObj}`);
+            console.log(`theName=${theName}`);
+            re = /^[\u4e00-\u9fff]{2,}$/;
+            if (re.test(theName)) {
+                // alert(`姓名輸入正確 : ${theName}。`);
+                document.getElementById("testname").innerHTML = `姓名輸入正確 : ${theName}。`;
+            } else {
+                document.getElementById("testname").innerHTML = `姓名輸入錯誤。`;
+            }
+        }
+        function checkPwd() {
+            let thePwdObj = document.getElementById("idpwd")
+            let thePwd = thePwdObj.value;
+            var boolean1 = false;
+            var boolean2 = false;
+            var boolean3 = false;
+            if (thePwd.length >= 6) {
+                re1 = /[a-zA-Z]/;
+                re2 = /[0-9]/;
+                re3 = /[!@#$%^&*]/;
+                if (re1.test(thePwd)) {
+                    boolean1 = true;
+                }
+                if (re2.test(thePwd)) {
+                    boolean2 = true;
+                }
+                if (re3.test(thePwd)) {
+                    boolean3 = true;
+                }
+                if (boolean1 == true && boolean2 == true && boolean3 == true) {
+                    document.getElementById("testpassword").innerHTML = `密碼輸入符合規定，您的密碼為 : ${thePwd}。`;
+                } else {
+                    document.getElementById("testpassword").innerHTML = `密碼輸入格式不正確，請依照需求輸入。`;
+                }
+            } else {
+                document.getElementById("testpassword").innerHTML = `密碼長度不足，請輸入至少六碼。`;
+            }
+        }
+        var validateDate = function (originalYear, originalMonth, originalDay) {
+            var date = new Date(originalYear, originalMonth - 1, originalDay);
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var day = date.getDate();
+            return year == originalYear && month == originalMonth && day == originalDay;
+        }
+        function checkDate() {
+            let theDateObj = document.getElementById("iddate");
+
+            let theDate = new Date(theDateObj.value);
+
+            if (theDate == "Invalid Date") {
+                // alert(`請輸入正確日期格式。`);
+                document.getElementById("datetest").innerHTML = `請輸入正確日期格式。`;
+            } else {
+                originalD = (theDateObj.value).split("/");
+                originalYear = originalD[0];
+                originalMonth = originalD[1];
+                originalDate = originalD[2];
+                if (originalYear == theDate.getFullYear() && originalMonth == (theDate.getMonth() + 1) && originalDate == theDate.getDate()) {
+                    document.getElementById("datetest").innerHTML = `日期格式正確且非閏年 : 輸入日期為:西元${theDate.getFullYear()}年 ${theDate.getMonth() + 1}月 ${theDate.getDate()}日`;
+                }
+                else {
+                    document.getElementById("datetest").innerHTML = `日期格式正確 但該日期不存在，可能為閏年或是小月，請確認後再輸入。`;
+
+                }
+            }
+
+
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+
+                    <ul class="menu">
+                            <li>
+                                <a href="homepage.html"> 首頁</a>
+                            </li>
+                            <li>
+                                <a href="hw001.html">HW01</a>
+                            </li>
+                            <li>
+                                <a href="hw002.html">HW02</a>
+                            </li>
+                            <li>
+                                <a href="hw003.html">HW03</a>
+                            </li>
+                            <li>
+                                <a href="hw004.html">HW04</a>
+                            </li>
+                            <li>
+                                <a href="hw005.html">HW05</a>
+                            </li>
+        
+                        </ul>
+            </nav>
+
+        </header>
+
+        <div class="content">
+            <article>
+                <h3 class="title">JAVASCRIPT作業-表格驗證 </h3>
+
+
+
+            </article>
+
+
+
+        </div>
+
+        <div>
+            <fieldset class="A1">
+                <legend> Form Check </legend>
+                <div> <label>姓名 :</label>
+                    <input type="text" id="idname" placeholder="請輸入姓名" size="20" required onblur="checkName()"></label>
+                    <span id=testname class="test"> </span>
+                    <br>
+                    <h5>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</h5>
+                </div>
+                <hr>
+                <div> <label>密碼 :</label>
+                    <input type="password" id="idpwd" placeholder="請輸入密碼" size="20" required
+                        onblur="checkPwd()"></label>
+                    <span id=testpassword class="test"> </span>
+                    <br>
+                    <h5>(1.不可空白，2.至少六個字母且必須包含英文字母、數字、特殊字元[!@#$%^&*])</h5>
+                </div>
+                <hr>
+                <div> <label>生日 :</label><input type="text" id="iddate" placeholder="ex:2019/6/21" size="20"
+                        onblur="checkDate()"></label>                    <span id=datetest class="test"></span>
+                    <h5>(格式:西元年/月/日 yyyy/MM/dd)</h5>
+
+                </div>
+                <hr>
+                <div class=" submit">
+                    <input type="submit" value="送出">
+                    <input type="reset" value="清除">
+                </div>
+
+            </fieldset>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

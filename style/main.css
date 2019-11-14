@@ -1,0 +1,167 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 微軟正黑體;
+}
+
+.menu {
+    background: #d9ffff;
+    overflow: auto;
+    width: 100%;
+    border-bottom: 3px solid gray;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin:15px;
+    padding:5px;
+}
+
+.menu li {
+    float: left;
+    width: 7em;
+    height:30px;
+    list-style-type: none;
+    border-right: 1px solid #ecf5ff;
+    font-size:22px;
+    
+}
+
+.menu li a {
+    text-align: center;
+    text-decoration: none;
+    line-height: 18px
+}
+
+.menu li a:hover {
+    background-color: purple;
+    color: yellow;
+
+}
+
+#allpage {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.title {
+  
+    line-height: 2.5em;
+    color: blue;
+    padding-left: 20px;
+}
+
+
+.p1{
+    margin:auto 150em auto 15em;
+    
+}
+
+.content {
+    margin: 15px;
+    text-align:center;
+    }
+
+
+
+
+.list1 {
+    list-style: decimal inside;
+}
+
+.content {
+    overflow: auto;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+
+footer {
+    width: 100%;
+    line-height: 2em;
+    text-align: right;
+    background-color:#DEFFFF		 ;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin:15px;
+    padding:5px;
+}
+.ab {
+    border: 1px solid red;
+    border-collapse: collapse;
+    color: gray;
+    background-color: #CCCCFF		;
+    margin:auto;
+    
+    width:70%;
+   
+}
+
+h2 {
+    color: pink;
+
+}
+.A1 {
+    border-radius: 15px;
+    width: 85%;
+    border: darkgreen solid 1px;
+    margin: 30px;
+    padding: 20px;
+    line-height: 10pX;
+}
+
+.test {
+    color: red;
+}
+h5{
+    line-height:10px;
+    margin:10px;
+    
+}
+
+#banner{
+    width:500px;
+    height:350px;
+    
+    margin:auto;
+    postion:relative;
+ 
+}
+#banner img {
+    display:block;
+    position:absolute;
+    top:150px;
+    left:700px;
+    z-index:1;
+   
+
+}
+#banner ul{
+    position: absolute;
+    top:128px;;
+    left:420px;
+    z-index:4;
+}
+#banner ul li{
+    margin:auto;
+    padding:0px 5px;
+    font-size:16px;
+    color:#999;
+    list-style-type:none;
+
+}
+#banner span{
+    width:500px;
+    height:25px;
+    position: absolute;
+    top:490px;
+    left:700px;
+    background:#333;
+    opacity:0.1;
+    filter: alpha(opacity=30);
+    z-index:3;
+}
+#banner strong{
+    position: absolute;
+    top:130px;
+    left:10px;
+    z-index:4;
+}
